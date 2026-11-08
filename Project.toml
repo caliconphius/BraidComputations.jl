@@ -1,0 +1,21 @@
+name = "BraidComputations"
+uuid = "735be11d-07ac-4ef0-b890-20a783958d0e"
+version = "0.1.0-DEV"
+authors = ["Thomas Csizmadia and contributors"]
+
+[deps]
+Farey = "25ec4c3e-37ad-41bf-bc1b-e639ba3b65a6"
+
+[sources]
+Farey = {path = "/home/tcsiz/Projects/phd-code/Kleinian.jl/packages/Farey"}
+
+[compat]
+Farey = "1"
+julia = "1.10"
+
+[extras]
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Random", "Test"]
