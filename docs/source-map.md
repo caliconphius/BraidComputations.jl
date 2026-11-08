@@ -116,6 +116,27 @@ implementation scope.
   the BKL monoid and describes non-crossing partitions and the Coxeter-cycle
   correspondence. [Local PDF](</home/tcsiz/Downloads/resources/Bessis(2002)DualBraidMonoid-v2.pdf>)
 
+### Huxford–Schillewaert example calculations
+
+P. Huxford and J. Schillewaert, *Braid groups, elliptic curves, and resolving
+the quartic* (arXiv:2309.12999, journal version 2025). Sections 2–6 provide
+the quotient, Nielsen–Thurston, transvection, Gassner-splitting and rank-two
+equation calculations used in `examples/huxford_schillewaert.jl`. The bounded
+verification in Lemma 6.10 is evaluated independently using reduced words.
+
+[Local PDF](</home/tcsiz/Downloads/resources/Huxford-Schillewaert(2025)BraidGroupsEllipticCurvesAndResolvingQuartic-v1.pdf>) ·
+[arXiv](https://arxiv.org/abs/2309.12999)
+
+The related existing Farey experiments are in
+`/home/tcsiz/Projects/phd-code/Kleinian.jl/packages/Farey/working/`:
+
+- `kassel_morphs.jl`: order-six automorphisms and related BKL transformations;
+- `autF2.jl`: Christoffel/Farey-word maps using `phi = G1i ∘ D1` and
+  `psi = D1i ∘ G1` as a later comparison point.
+
+These experiments are cross-references for further research, not additional
+runtime dependencies of this package.
+
 ## Local implementation references
 
 - Farey package: `/home/tcsiz/Projects/phd-code/Kleinian.jl/packages/Farey`.

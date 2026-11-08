@@ -66,7 +66,7 @@ words at several strand counts.
 Exit criterion: exhaustive small cases and targeted conjugate pairs verify
 representatives, circuit membership, conjugators, and conjugacy decisions.
 
-## Stage 4 — standard parabolic subgroups and Algorithm 1
+## Stage 4 — standard parabolic subgroups and Algorithm 1 (implemented)
 
 - Represent standard parabolic subgroups by generator subsets; specialize
   irreducible braid subgroups to intervals.
@@ -80,7 +80,7 @@ Exit criterion: tests cover nested versus adjacent subgroups, rejected
 nonstandard orbits, disconnected adjacency graphs, and maximal-simplex
 selection.
 
-## Stage 5 — braid canonical reduction systems
+## Stage 5 — braid canonical reduction systems (implemented for small indices)
 
 - For each sliding-circuit representative, find the maximal dimension of a
   standard reduction simplex.
@@ -104,8 +104,11 @@ independent small-`n` comparisons all pass.
   González-Meneses–Wiest, if these are part of the desired project.
 - Dual Garside structures.
 - Full automatic-structure objects and multiplier automata.
-- Performance work, cached transition tables, serialization, and benchmarks
-  only after correctness tests are established.
+- Optimized transport/pullback circuit search, general non-crossing-partition
+  BKL representation, and performance work after the current small-index
+  implementations have correctness baselines.
+- Further investigation relating the order-six rank-two automorphisms used by
+  Huxford–Schillewaert to the existing Kassel/Christoffel/Farey morphisms.
 
 ## Testing and documentation policy
 

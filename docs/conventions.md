@@ -132,6 +132,34 @@ generator output, while `artin_letters` provides the input to the existing
 classical braid normalizer. Every BKL normal form is checked in tests against
 classical `Braid` equality.
 
+## Sliding circuits and canonical reduction systems
+
+`sliding_circuits(x)` uses exhaustive conjugation by all standard braids and
+retains all periodic vertices of the resulting graph. It therefore constructs
+full `SC(x)` for small braid indices without relying on only one circuit.
+Each stored conjugator follows the CRS convention: `γ^c = α`. A known witness
+with `x^c = y` is returned by `conjugacy_witness(x,y)` when such a `c` exists.
+This is deliberately a correctness-first alternative to the more intricate
+Gebhardt–González-Meneses transport/pullback implementation.
+
+A `StandardParabolic(i,j)` denotes generators `σ_i` through `σ_j`, excluding
+the full group. Its positive central element is `Δ_P` at rank 1 and `Δ_P²`
+thereafter. Actions are `P^α = inv(α) P α`, with standardness recovered from
+the positive central element rather than only an optimized prefix shortcut.
+
+The braid CRS implementation enumerates standard reduction simplices, chooses
+an `SC(x)` representative of maximal simplex dimension, intersects its maximal
+simplices, and removes the orbits of nonessential curves only after the
+§5.2 boundary-component periodicity tests. It returns standard representatives
+together with the conjugator back to the input. `outer_crs_partition` drops
+inner curves and supplies singleton loops, so empty CRS returns `[1,…,1]`.
+
+`delete_strands` tracks which original strands are active at each crossing;
+it does not simply discard letters with a preset label. Periodic components
+allow central powers including the identity (zero full twist). Standard curve
+diagrams depict nested enclosing intervals up to conjugacy; they are not a
+certified drawing of an arbitrary nonstandard multicurve.
+
 ## Farey boundary
 
 Farey generator IDs come from the generator names: for example, `FreeGen("f")`

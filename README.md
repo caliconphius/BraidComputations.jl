@@ -24,15 +24,24 @@ Implemented now:
 - standard **left normal forms**, left-weighted checks, and local sliding;
 - initial/final factors, preferred prefixes, Elrifai–Morton cycling and
   decycling, cyclic sliding, transport, and iteration to a repeated circuit;
+- full sliding-circuit enumeration by exhaustive standard conjugacy and
+  conjugacy witnesses for small braid indices;
+- standard irreducible parabolic subgroups, reduction simplices, braid
+  canonical reduction systems, Nielsen–Thurston type, and outer partitions;
+- dependency-free braid and standard-CRS SVG drawings, in horizontal or
+  vertical orientation;
 - Birman–Ko–Lee/dual simple braids, absolute-order gcds, dual local sliding,
   and left normal forms for Artin words, Farey words, and signed native band
   generators;
 - conversion to and from `Farey.Monoids` words, including explicit named
   generator mappings.
 
-Not yet implemented: mixed canonical form, full `SC(x)` enumeration,
-conjugacy search, and canonical reduction systems. `iterate_cyclic_sliding`
-only reaches one circuit; it is not the full conjugacy algorithm.
+Not yet implemented: mixed canonical form, the optimized
+Gebhardt–González-Meneses transport/pullback circuit search, and CRS support
+for general spherical Artin–Tits groups. `iterate_cyclic_sliding` reaches one
+circuit; `sliding_circuits` supplies full `SC(x)` by breadth-first simple
+conjugacy, with conjugators satisfying `γ^c = α`. CRS and conjugacy routines
+are intended for small braid indices, not for large-scale production use.
 
 ## Quick start
 
@@ -60,11 +69,25 @@ Run the examples with:
 ./julia-project examples/getting_started.jl
 ./julia-project examples/garside_operations.jl
 ./julia-project examples/bkl.jl
+./julia-project examples/huxford_schillewaert.jl
+./julia-project examples/visualize.jl
 ```
 
 See [`docs/conventions.md`](docs/conventions.md) for the exact product,
 permutation, transducer, Δ-prefix normal-form, and Farey-mapping conventions.
 The stored right-greedy form is deliberately not called left normal form.
+See [`examples/huxford_schillewaert.jl`](examples/huxford_schillewaert.jl)
+for explicit calculations from the paper of that name, including the bounded
+free-rank-two equation verification.
+
+To generate SVG files without String or plotting dependencies:
+
+```julia
+x = BraidGroup(4)([1, 2, 1, 1, 2, 1, 3])
+save_braid_svg("braid.svg", x; orientation=:left_to_right)
+save_crs_svg("crs.svg", x)
+save_outer_crs_svg("outer.svg", x)
+```
 
 ## Development setup
 

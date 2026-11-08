@@ -8,6 +8,10 @@ include("Braids.jl")
 include("Transducer.jl")
 include("LeftNormalForms.jl")
 include("GarsideOperations.jl")
+include("SlidingCircuits.jl")
+include("Parabolic.jl")
+include("CanonicalReduction.jl")
+include("Visualize.jl")
 include("BKL.jl")
 include("BKLNormalizing.jl")
 include("Words.jl")
@@ -21,6 +25,18 @@ export right_complement, left_complement, left_gcd_standard, local_sliding
 export initial_factor, final_factor, preferred_prefix, is_rigid
 export sliding_conjugator, cyclic_sliding, cyclic_sliding_with_conjugator
 export cycling, decycling, transport, iterate_cyclic_sliding
+export has_sliding_circuit, sliding_circuit_period, sliding_circuits
+export conjugacy_witness, is_conjugate
+export StandardParabolic, ParabolicSystem, standard_parabolics
+export rank, puncture_count, punctures, central_element, z
+export flip_parabolic, act_on_parabolic, act_on_system, adjacent
+export parabolic_orbit, standard_reduction_simplices, maximal_standard_reduction_simplices
+export CanonicalReductionSystem, canonical_reduction_system, crs
+export delete_strands, is_full_twist, is_central, is_periodic, braid_component
+export outer_crs_partition, nielsen_thurston_type, is_reducible, is_pseudo_anosov
+export standard_system, base_conjugator
+export braid_svg, crs_svg, outer_crs_svg
+export save_braid_svg, save_crs_svg, save_outer_crs_svg
 export BKLAtom, BKLStructure, BKLSimpleBraid, BKLNormalForm
 export bkl_atom, bkl_normal_form, bkl_simple, bkl_generators
 export bkl_simple_permutations, is_bkl_simple, is_bkl_left_normal, is_bkl_left_weighted

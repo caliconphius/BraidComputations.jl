@@ -1,5 +1,6 @@
 /Manifest.toml
 /.depot/
+/build/
 /docs/build/
 /docs/site/
 *.jl.cov
